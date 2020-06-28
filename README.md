@@ -3,6 +3,7 @@
 
 organize, search, group and select sound files
 
+configure system settings using ansible
 
 ## Installation
 
