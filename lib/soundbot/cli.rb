@@ -1,9 +1,12 @@
-require "soundbot/version"
-require "commander/import"
+
+# require "soundbot/version"
+
 
 module Soundbot
   class Error < StandardError; end
-  puts "#{VERSION}"
+  #puts "#{VERSION}"
+  # load config
+  # initialize database
 end
 
 
@@ -15,7 +18,23 @@ program :description, 'organize, search, group and select sound files'
 command :config do |c|
   c.syntax = 'soundbot config'
   c.description = 'Displays config'
+  #using --no- will return false otherwise will return true
   c.option '--[no-]display', 'displays current config'
+  #if the option is passed as a string then anything after a string with be an arg
+  c.option '--generate STRING', String, 'generates default config'
+  #c.option '--jack STRING', String, ''
+  c.action do |args, options|
+    say "#{options.display} #{args}"
+    say "#{options.generate} #{args}"
+  end
+end
+
+command :start do |c|
+  c.syntax = 'soundbot start'
+  c.description = 'starts jackdbus & a2jmididbus'
+  #using --no- will return false otherwise will return true
+  c.option '--[no-]display', 'displays current config'
+  #if the option is passed as a string then anything after a string with be an arg
   c.option '--generate STRING', String, 'generates default config'
   c.action do |args, options|
     say "#{options.display} #{args}"
