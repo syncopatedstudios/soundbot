@@ -1,0 +1,15 @@
+---
+:librarypath: "~/Studio/library"
+:scan_on_start: true
+jack_stuff:
+  dps device: 'hw:0'
+  dps rate: 48000
+  dps period: 512
+  dps nperiods: 2
+  dps midi-driver: seq
+  eps driver: alsa
+  eps realtime: True
+  eps realtime-priority: 80
+  eps verbose: True
+  eps client-timeout: 1000
+  
