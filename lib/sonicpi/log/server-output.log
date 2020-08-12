@@ -1,0 +1,64 @@
+Sonic Pi server booting...
+This is version 3.2.0 running on Ruby 2.7.0.
+The time is 2020-08-11 22:34:50 -0400
+Using primary protocol: udp
+Detecting port numbers...
+Listen port: 51235
+  - OK
+Scsynth port: 51237
+  - OK
+Scsynth send port: 51237
+  - OK
+OSC cues port: 4560
+  - OK
+Erlang port: 51240
+  - OK
+OSC MIDI out port: 51238
+  - OK
+OSC MIDI in port: 51239
+  - OK
+Websocket port: 51241
+  - OK
+Opening UDP Server to listen to GUI on port: 51235
+Starting Server Runtime
+Booting server...
+
+
+Booting Sonic Pi
+----------------
+
+Booting on Linux
+Jackd already running. Not starting another server...
+Boot - Starting the SuperCollider server...
+Boot - scsynth -u 51237 -m 131072 -a 1024 -D 0 -R 0 -l 1 -i 8 -o 8 -b 4096 -B 127.0.0.1
+Started [26035] [-] scsynth -u 51237 -m 131072 -a 1024 -D 0 -R 0 -l 1 -i 8 -o 8 -b 4096 -B 127.0.0.1 [-] /tmp/sonic-pi-pids/26035
+Boot - SuperCollider booted successfully.
+Boot - Connecting to the SuperCollider server...
+Boot - Sending /status to server: 127.0.0.1:51237
+Boot - Receiving ack from scsynth
+Boot - Server connection established
+Studio - Initialised SuperCollider Audio Server v3.11.0
+Studio - Resetting server
+Studio - Studio - clearing scsynth
+Studio - Studio - allocating audio bus
+Studio - Studio - Create Base Synth Groups
+Studio - Starting mixer
+Studio - Starting scope
+exec erl -noshell -pz "/home/b08x/Workspace/sonic-pi-3.2.2/app/server/erlang" -s pi_server start 51240 4560 51235
+Started [26058] [-] /usr/lib/erlang/erts-11.0/bin/beam.smp -- -root /usr/lib/erlang -progname erl -- -home /home/b08x -- -noshell -pz /home/b08x/Workspace/sonic-pi-3.2.2/app/server/erlang -s pi_server start 51240 4560 51235 [-] /tmp/sonic-pi-pids/26058
+Studio - Spawning o2m with:
+    exec '/home/b08x/Workspace/sonic-pi-3.2.2/app/server/native/osmid/o2m' -L -b -i 51238 -O 51239 -m 6
+Started [26097] [-] /home/b08x/Workspace/sonic-pi-3.2.2/app/server/native/osmid/o2m -L -b -i 51238 -O 51239 -m 6 [-] /tmp/sonic-pi-pids/26097
+Studio - Spawning m2o with:
+    exec '/home/b08x/Workspace/sonic-pi-3.2.2/app/server/native/osmid/m2o' -t /midi:\$n:\$i:\$c/\$m -b -o 51239 -m 6 'Sonic Pi'
+Started [26100] [-] /home/b08x/Workspace/sonic-pi-3.2.2/app/server/native/osmid/m2o -t /midi:$n:$i:$c/$m -b -o 51239 -m 6 Sonic Pi [-] /tmp/sonic-pi-pids/26100
+Studio - Initialised MIDI subsystems
+This is Sonic Pi v3.2.2 running on linux with ruby api 2.7.0.
+Sonic Pi Server successfully booted.
+Server is exiting.
+Shutting down GUI...
+Goodbye :-)
+Exiting - shutting down scsynth server...
+Sending /quit command to scsynth
+Stopping OSC server...
+Stopped OSC server...

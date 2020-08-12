@@ -1,0 +1,18 @@
+
++--------------------------------------+
+    This is the Sonic Pi IO Server      
+       Powered by Erlang "23"             
+                                        
+       API listening on port 51240	       
+        Incoming OSC on port 4560	       
+  OSC cue forwarding to {127,0,0,1}              
+                     on port 51235	       
++--------------------------------------+
+
+
+Enabling cue forwarding 
+Switching cue listener to open network
+Enabling cue forwarding 
+
+BREAK: (a)bort (A)bort with dump (c)ontinue (p)roc info (i)nfo
+       (l)oaded (v)ersion (k)ill (D)b-tables (d)istribution

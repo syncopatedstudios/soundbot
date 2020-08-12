@@ -1,0 +1,41 @@
+
+
+Clearing pids: ["25923", "25919", "25875", "25849", "25831"]
+
+Clearing [25923]
+  -- command /home/b08x/Workspace/sonic-pi-3.2.2/app/server/native/osmid/m2o -t /midi:$n:$i:$c/$m -b -o 51239 -m 6 Sonic Pi
+  -- removing /tmp/sonic-pi-pids/25923
+  -- unable to get ProcTable info for: 25923
+  -- process: 25923 not running
+
+Clearing [25919]
+  -- command /home/b08x/Workspace/sonic-pi-3.2.2/app/server/native/osmid/o2m -L -b -i 51238 -O 51239 -m 6
+  -- removing /tmp/sonic-pi-pids/25919
+  -- unable to get ProcTable info for: 25919
+  -- process: 25919 not running
+
+Clearing [25875]
+  -- command /usr/lib/erlang/erts-11.0/bin/beam.smp -- -root /usr/lib/erlang -progname erl -- -home /home/b08x -- -noshell -pz /home/b08x/Workspace/sonic-pi-3.2.2/app/server/erlang -s pi_server start 51240 4560 51235
+  -- removing /tmp/sonic-pi-pids/25875
+  -- unable to get ProcTable info for: 25875
+  -- process: 25875 not running
+
+Clearing [25849]
+  -- command scsynth -u 51237 -m 131072 -a 1024 -D 0 -R 0 -l 1 -i 8 -o 8 -b 4096 -B 127.0.0.1
+  -- removing /tmp/sonic-pi-pids/25849
+  -- unable to get ProcTable info for: 25849
+  -- process: 25849 not running
+
+Clearing [25831]
+  -- command /home/b08x/.rvm/rubies/ruby-2.7.0/bin/ruby --enable-frozen-string-literal -E utf-8 /home/b08x/Workspace/sonic-pi-3.2.2/app/gui/qt/build/../../../../app/server/ruby/bin/sonic-pi-server.rb -u 51235 51236 51237 51237 4560 51240 51238 51239 51241
+  -- removing /tmp/sonic-pi-pids/25831
+  -- unable to get ProcTable info for: 25831
+  -- process: 25831 not running
+
+Finished clearing pids
+
+Started [26023] [-] /home/b08x/.rvm/rubies/ruby-2.7.0/bin/ruby --enable-frozen-string-literal -E utf-8 /home/b08x/Workspace/sonic-pi-3.2.2/app/gui/qt/build/../../../../app/server/ruby/bin/sonic-pi-server.rb -u 51235 51236 51237 51237 4560 51240 51238 51239 51241 [-] /tmp/sonic-pi-pids/26023
+Started [26035] [-] scsynth -u 51237 -m 131072 -a 1024 -D 0 -R 0 -l 1 -i 8 -o 8 -b 4096 -B 127.0.0.1 [-] /tmp/sonic-pi-pids/26035
+Started [26058] [-] /usr/lib/erlang/erts-11.0/bin/beam.smp -- -root /usr/lib/erlang -progname erl -- -home /home/b08x -- -noshell -pz /home/b08x/Workspace/sonic-pi-3.2.2/app/server/erlang -s pi_server start 51240 4560 51235 [-] /tmp/sonic-pi-pids/26058
+Started [26097] [-] /home/b08x/Workspace/sonic-pi-3.2.2/app/server/native/osmid/o2m -L -b -i 51238 -O 51239 -m 6 [-] /tmp/sonic-pi-pids/26097
+Started [26100] [-] /home/b08x/Workspace/sonic-pi-3.2.2/app/server/native/osmid/m2o -t /midi:$n:$i:$c/$m -b -o 51239 -m 6 Sonic Pi [-] /tmp/sonic-pi-pids/26100
