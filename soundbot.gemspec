@@ -14,8 +14,8 @@ Gem::Specification.new do |spec|
   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/b08x/soundbot"
-  spec.metadata["changelog_uri"] = "https://github.com/b08x/soundbot/blob/master/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/syncopatedstudios/soundbot"
+  spec.metadata["changelog_uri"] = "https://github.com/syncopatedstudios/soundbot/blob/master/CHANGELOG.md"
 
   spec.files         = ['bin/soundbot']
   spec.bindir        = "bin"
