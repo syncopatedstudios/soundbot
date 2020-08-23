@@ -4,7 +4,7 @@ collect, tag, organize, group, search, select, modify, export sound files
 
 create groups based on "emotional response"
 
-select 5 files, label them "omnious". the characteristics from the selected 5 files will hen be cross-referenced and other sounds matching similar characteristics will be tagged as "omnious" as well. 
+select 5 files, label them "ominous". the characteristics from the selected 5 files will hen be cross-referenced and other sounds matching similar characteristics will be tagged as "ominous" as well.
 
 import sound files from various locations
 once file metadata is collected, sounds can be grouped together or searched by various criteria
@@ -51,6 +51,11 @@ Or install it yourself as:
 ```bash
 $ gem install soundbot
 ```
+
+
+
+
+
 ## Usage
 
 TODO: Write usage instructions here
