@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["rwpannick@gmail.com"]
 
   spec.summary       = %q{sorting sound with semantics}
-  spec.description   = %q{organzie, view and select sound samples based on various criteria}
+  spec.description   = %q{organize, view and select sound samples based on various criteria}
   spec.homepage      = "https://syncopatedstudios.org/soundbot"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
@@ -17,10 +17,9 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = "https://github.com/b08x/soundbot"
   spec.metadata["changelog_uri"] = "https://github.com/b08x/soundbot/blob/master/CHANGELOG.md"
 
-  spec.files         = Dir['{lib,spec}/**/*.rb', '{bin,tasks}/*', 'strings.gemspec']
-  spec.files        += Dir['README.md', 'CHANGELOG.md', 'LICENSE.txt', 'Rakefile']
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.files         = ['bin/soundbot']
+  spec.bindir        = "bin"
+  spec.executables   = ['soundbot']
   spec.require_paths = ["lib"]
 
 
