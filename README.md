@@ -31,7 +31,29 @@ export as;
 
 
 
-configure some system settings
+## configure some system settings
+using ansible, setup core OS stuff;
+  * dotfiles
+  * install apps (sonic & sonic-pi-tool)
+
+do this before install rvm;
+after downloading, compiling sonic;
+  download to /opt
+  create .sonic-pi directory and put init.rb, helpers & snippets
+
+# sessions/projects/
+
+reaper stuff
+agor stuff
+soundfonts
+samples
+
+start a new session
+  name
+  using deadbeef; select sounds from library and copy to session/project folder
+
+
+
 
 ## Installation
 

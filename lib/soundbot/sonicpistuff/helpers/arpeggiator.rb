@@ -28,13 +28,13 @@ define :arp_to_midi do |prog, tonic, mode=:major, pattern=[0, 1, 2, 3], reps=2|
     puts "prog", prog
     reps.times do
 
-      midi sc[deg-1] - 12, sustain: 0.9, velocity: 50, channel: 1
+      midi sc[deg-1] - 12, sustain: 0.9
 
       t = 1.0 / pattern.length
       pattern.each do |i|
         n = sc[deg - 1 + 2*i + (i+1) / 4]
         #puts "n", n
-        midi n, sustain: 1.5 * t, velocity: 50, channel: 1
+        midi n, sustain: 1.5 * t
 
         sleep t
       end

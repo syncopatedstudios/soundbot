@@ -6,9 +6,6 @@ $LOAD_PATH.unshift dir unless $LOAD_PATH.include?(dir)
 
 require 'soundbot'
 
-
-
-
 program :name, 'soundbot'
 program :version, '0.1.0'
 program :description, 'organize, search, group and select sound files'
@@ -20,7 +17,6 @@ command :config do |c|
   c.option '--[no-]display', 'displays current config'
   #if the option is passed as a string then anything after a string with be an arg
   c.option '--generate', 'generates default config'
-  #c.option '--jack STRING', String, ''
   c.action do |args, options|
 
     # TODO: error handling. if display is selected before generate, we get a file not found message:
@@ -46,12 +42,14 @@ command :start do |c|
   c.description = 'starts jackdbus & a2jmididbus'
   #using --no- will return false otherwise will return true
   c.option '--[no-]pulse', 'option to load pulse or not'
+  c.option('--jack' 'start jack') { Soundbot::SoundLayer.start_jack }
+
   #if the option is passed as a string then anything after a string with be an arg
-  c.option '--generate STRING', String, 'generates default config'
-  c.action do |args, options|
-    say "#{options.display} #{args}"
-    say "#{options.generate} #{args}"
-  end
+  # c.option '--generate STRING', String, 'generates default config'
+  # c.action do |args, options|
+  #   say "#{options.display} #{args}"
+  #   say "#{options.generate} #{args}"
+  # end
 end
 
 command :bar do |c|

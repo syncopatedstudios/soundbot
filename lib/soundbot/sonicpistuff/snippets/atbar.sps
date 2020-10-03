@@ -3,4 +3,5 @@
 # point_index: 7
 # --
 at bar() do
+
 end
