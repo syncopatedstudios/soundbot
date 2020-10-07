@@ -4,3 +4,6 @@
 [submodule "isabella"]
 	path = isabella
 	url = git@github.com:syncopatedstudios/isabella.git
+[submodule "sonic-pi"]
+	path = sonic-pi
+	url = git@github.com:syncopatedstudios/sonic-pi.git
