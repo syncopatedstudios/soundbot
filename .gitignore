@@ -7,3 +7,4 @@ audiotools/**
 *.Trash-1000
 scratchpad*
 notes.MD
+dotfiles/**
