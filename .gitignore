@@ -1,1 +1,10 @@
 julius
+*.reapeaks
+REAPER
+reaper*
+rubeats
+audiotools/**
+*.Trash-1000
+scratchpad*
+notes.MD
+
