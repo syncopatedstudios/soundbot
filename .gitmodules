@@ -7,3 +7,6 @@
 [submodule "sonic-pi"]
 	path = sonic-pi
 	url = git@github.com:syncopatedstudios/sonic-pi.git
+[submodule "spark"]
+	path = spark
+	url = git@github.com:syncopatedstudios/spark.git
