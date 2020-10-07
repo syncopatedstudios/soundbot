@@ -1,3 +1,6 @@
 [submodule "dotfiles"]
 	path = dotfiles
 	url = git@github.com:b08x/dotfiles.git
+[submodule "isabella"]
+	path = isabella
+	url = git@github.com:syncopatedstudios/isabella.git
