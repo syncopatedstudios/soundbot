@@ -21,8 +21,6 @@ command :config do |c|
 
     # TODO: error handling. if display is selected before generate, we get a file not found message:
     # home/b08x/Workspace/soundbot/lib/soundbot/config.rb:34:in `initialize': No such file or directory @ rb_sysopen - /home/b08x/.config/soundbot/config.yml (Errno::ENOENT)
-
-
     if options.generate
       say "setting default config"
       Soundbot::Config.set_default_config
@@ -31,9 +29,6 @@ command :config do |c|
       p options.display
       puts "#{Soundbot::Config.load_config}"
     end
-
-
-
   end
 end
 

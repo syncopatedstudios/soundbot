@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
-require_relative 'soundbot/config'
-require_relative 'soundbot/start_sound_layer'
+require_relative 'config'
 
 module Soundbot
   class Error < StandardError; end
   #puts "#{VERSION}"
+  puts "hey"
   # load config
   # initialize database
 end

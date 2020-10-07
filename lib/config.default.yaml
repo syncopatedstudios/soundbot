@@ -1,3 +1,4 @@
 ---
 :librarypath: "~/Studio/library"
+:timemachine: "~/Studio/timemachine"
 :scan_on_start: true

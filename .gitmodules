@@ -1,0 +1,6 @@
+[submodule "sonic-pi"]
+	path = sonic-pi
+	url = ./sonic-pi/
+[submodule "dotfiles"]
+	path = dotfiles
+	url = ./dotfiles/
