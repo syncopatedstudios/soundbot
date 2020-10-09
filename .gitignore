@@ -6,5 +6,5 @@ rubeats
 audiotools/**
 *.Trash-1000
 scratchpad*
-notes.MD
+notes.md
 dotfiles/**
