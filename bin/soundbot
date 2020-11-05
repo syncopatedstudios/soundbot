@@ -6,6 +6,11 @@ $LOAD_PATH.unshift dir unless $LOAD_PATH.include?(dir)
 
 require 'soundbot'
 
+##################################################
+### this is run after soundbot.rb
+### config, util and soundbot modules are loaded
+
+
 program :name, 'soundbot'
 program :version, '0.1.0'
 program :description, 'organize, search, group and select sound files'
@@ -18,7 +23,6 @@ command :config do |c|
   #if the option is passed as a string then anything after a string with be an arg
   c.option '--generate', 'generates default config'
   c.action do |args, options|
-
     # TODO: error handling. if display is selected before generate, we get a file not found message:
     # home/b08x/Workspace/soundbot/lib/soundbot/config.rb:34:in `initialize': No such file or directory @ rb_sysopen - /home/b08x/.config/soundbot/config.yml (Errno::ENOENT)
     if options.generate
@@ -26,7 +30,7 @@ command :config do |c|
       Soundbot::Config.set_default_config
       puts "#{Soundbot::Config.load_config}"
     elsif options.display
-      p options.display
+      say "#{options.display}"
       puts "#{Soundbot::Config.load_config}"
     end
   end

@@ -3,20 +3,18 @@
 require 'yaml'
 require 'commander/import'
 
-CONFIG=Pathname.new(File.join(ENV['HOME'], '.config', 'soundbot', 'config.yml'))
-
+CONFIG = Pathname.new(File.join(ENV['HOME'], '.config', 'soundbot', 'config.yaml'))
 
 module Soundbot
   class Error < StandardError; end
-  #puts "#{VERSION}"
-  # load config
+
   module Config
     # create the config directory if needed, then copy the default config if needed
     #
     # @api private
     def set_default_config
       unless CONFIG.exist?
-        lib_dir = File.expand_path("../../", __FILE__)
+        lib_dir = File.expand_path(__dir__)
 
         default_config = File.join(lib_dir + '/config.default.yaml')
 
@@ -31,11 +29,8 @@ module Soundbot
     #
     # @api private
     def load_config
-      config = YAML::load(File.open("#{CONFIG}"))
-
-      return config
+      YAML.load(File.open(CONFIG.to_s))
     end
     module_function :load_config
   end
-
 end

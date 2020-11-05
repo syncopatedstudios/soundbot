@@ -12,3 +12,9 @@ https://github.com/mrkmg/git-stream#usage
 it can really help when you have a ton of ideas you are trying to manage."
 
 # rcm config mgmt
+
+
+
+# ruby stuff
+
+#TODO: add forkoff,childprocess,playlist gems

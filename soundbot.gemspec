@@ -34,9 +34,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'commander', '~> 4.5.2'
   spec.add_dependency 'yaml', '~> 0.1.0'
   spec.add_dependency 'playlist', '~> 1.2.0'
-  spec.add_dependency 'pocketsphinx-ruby', '~> 0.4.0'
+  #spec.add_dependency 'pocketsphinx-ruby', '~> 0.4.0'
+  spec.add_dependency 'pocketsphinx-ruby'
   #TODO: this version of sphinxtrain depends on pocketsphinx 0.3.0, so yeah....
-  # spec.add_dependency 'sphinxtrain-ruby', '~> 0.0.3'
+  spec.add_dependency 'sphinxtrain-ruby'
   spec.add_dependency 'tts', '~> 0.8.2'
 
   spec.add_development_dependency "bundler", "~> 2.1.0"
