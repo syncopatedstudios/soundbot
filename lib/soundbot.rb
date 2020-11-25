@@ -3,6 +3,7 @@
 require 'soundbot/version'
 require_relative 'config'
 require_relative 'util'
+#require 'soundbot/database'
 
 module Soundbot
   class Error < StandardError; end

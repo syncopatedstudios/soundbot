@@ -33,6 +33,13 @@ module OcdFileUtil
 
 end
 
+def file_stats(file)
+
+  return file_data
+end
 givem a top level directory
 get an array of 1 level's worth of folders
 then for each folder, glob for audio files
+
+
+metaflac --picture

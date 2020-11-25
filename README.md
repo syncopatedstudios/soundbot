@@ -18,3 +18,8 @@ it can really help when you have a ton of ideas you are trying to manage."
 # ruby stuff
 
 #TODO: add forkoff,childprocess,playlist gems
+
+# rom stuff
+
+https://github.com/rom-rb/rom/blob/master/bin/console
+https://medium.com/@igkuz/how-to-setup-ruby-object-mapper-rom-for-standalone-project-15472fcf31e1

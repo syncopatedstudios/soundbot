@@ -9,7 +9,9 @@ require 'soundbot'
 ##################################################
 ### this is run after soundbot.rb
 ### config, util and soundbot modules are loaded
+##################################################
 
+#TODO: try another cli parser. optparse/highline/tty
 
 program :name, 'soundbot'
 program :version, '0.1.0'
@@ -36,12 +38,18 @@ command :config do |c|
   end
 end
 
-command :start do |c|
-  c.syntax = 'soundbot start'
-  c.description = 'starts jackdbus & a2jmididbus'
+command :add do |c|
+  c.syntax = 'soundbot add'
+  c.description = 'add sound files'
   #using --no- will return false otherwise will return true
-  c.option '--[no-]pulse', 'option to load pulse or not'
-  c.option('--jack' 'start jack') { Soundbot::SoundLayer.start_jack }
+  c.option '-p','--path STRING', String, 'import one or more files'
+  c.action do |args, options|
+    puts "addings sounds from #{args} or #{options.path} to database"
+    if args.empty?
+      import_path = ENV["PWD"] + "/"
+      puts import_path
+    end
+  end
 
   #if the option is passed as a string then anything after a string with be an arg
   # c.option '--generate STRING', String, 'generates default config'
@@ -49,15 +57,4 @@ command :start do |c|
   #   say "#{options.display} #{args}"
   #   say "#{options.generate} #{args}"
   # end
-end
-
-command :bar do |c|
-  c.syntax = 'soundbot bar [options]'
-  c.description = 'Display bar with optional prefix and suffix'
-  c.option '--prefix STRING', String, 'Adds a prefix to bar'
-  c.option '--suffix STRING', String, 'Adds a suffix to bar'
-  c.action do |args, options|
-    options.default :prefix => '(', :suffix => ')'
-    say "#{options.prefix}bar#{options.suffix}"
-  end
 end
