@@ -10,3 +10,4 @@ notes.md
 dotfiles/**
 .ipynb_checkpoints/
 *.ipynb
+*/annotator/**
