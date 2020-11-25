@@ -30,6 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'tty-screen', '~> 0.7'
   spec.add_dependency 'tty-which',  '~> 0.4'
   spec.add_dependency 'tty-file',  '~> 0.8'
+  spec.add_dependency 'tty-command',  '~> 0.10.0'
   spec.add_dependency 'sequel', '~> 5.33.0'
   spec.add_dependency 'commander', '~> 4.5.2'
   spec.add_dependency 'yaml', '~> 0.1.0'
@@ -39,6 +40,10 @@ Gem::Specification.new do |spec|
   #TODO: this version of sphinxtrain depends on pocketsphinx 0.3.0, so yeah....
   spec.add_dependency 'sphinxtrain-ruby'
   spec.add_dependency 'tts', '~> 0.8.2'
+  spec.add_dependency 'aubio', '~> 0.3.6'
+  spec.add_dependency 'rom','~> 5.2.4'
+  spec.add_dependency 'rom-sql','~> 3.2.0'
+  spec.add_dependency 'pg','~> 1.2.3'
 
   spec.add_development_dependency "bundler", "~> 2.1.0"
   spec.add_development_dependency "rake", "~> 13.0.1"
