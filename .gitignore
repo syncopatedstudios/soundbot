@@ -11,3 +11,4 @@ dotfiles/**
 .ipynb_checkpoints/
 *.ipynb
 */annotator/**
+*.idea
