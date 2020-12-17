@@ -8,3 +8,6 @@
 :import:
   :move: false
   :link: false
+
+# set settings for jack here:
+:jack_settings:

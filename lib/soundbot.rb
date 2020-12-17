@@ -3,6 +3,7 @@
 require 'soundbot/version'
 require_relative 'config'
 require_relative 'util'
+require 'soundbot/start_sound_layer'
 #require 'soundbot/database'
 
 module Soundbot

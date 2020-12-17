@@ -4,6 +4,30 @@ here they are, or there they are.
 
 either way. sound management.
 
+# install
+
+`gem install --user soundbot-1.0.gem`
+
+If you see something like this;
+
+`WARNING:  You don't have /home/b08x/.gem/ruby/2.7.0/bin in your PATH,
+	  gem executables will not run.
+`
+Just give it what it wants.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # git stream
 
 https://github.com/mrkmg/git-stream#usage
