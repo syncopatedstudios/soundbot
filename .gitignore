@@ -12,3 +12,5 @@ dotfiles/**
 *.ipynb
 */annotator/**
 *.idea
+*/*.gem
+

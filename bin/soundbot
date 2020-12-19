@@ -61,14 +61,26 @@ end
 
 command :start do |cmd|
   cmd.syntax = 'soundbot start'
-  cmd.description = 'start jack service'
+  cmd.description = 'start a linux sound layer service'
+  cmd.option '--reload', 'reloads jack dbus'
   cmd.option '--pulse', 'starts pulse along with jack'
   cmd.action do |args, options|
     say "starting jack service"
-      SoundLayer::stop_pulse
-      SoundLayer::start_jack
       if options.pulse
         SoundLayer::start_pulse
+      else
+        SoundLayer::stop_pulse
+        SoundLayer::start_jack
       end
+  end
+end
+
+command :levels do |cmd|
+  cmd.syntax = 'soundbot levels'
+  cmd.description = 'ensure alsamixer is what you expect it to be'
+  cmd.option '--mute', 'why not? mute alsa'
+  cmd.action do |args, options|
+
+
   end
 end
