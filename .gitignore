@@ -13,4 +13,4 @@ dotfiles/**
 */annotator/**
 *.idea
 */*.gem
-
+Gemfile.lock
