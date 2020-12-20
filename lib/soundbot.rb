@@ -2,11 +2,18 @@ require "soundbot/version"
 require "soundbot/config"
 require "soundbot/cli"
 
+CONFIGPATH = Pathname.new(File.join(ENV['HOME'], '.config', 'soundbot'))
 
 module Soundbot
   class Error < StandardError; end
   # Your code goes here...
-  puts "hey"
+  # check if db file exists, if not initialize database
 
-  # @config.set(:library, value: '/home/b08x/Studio/library')
+  db = File.join(CONFIGPATH, "soundbot.db")
+
+  unless db.exist?
+    say "initializing database!"
+    Soundbot::DB.start
+  end
+
 end
