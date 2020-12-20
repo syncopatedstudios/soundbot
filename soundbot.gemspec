@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{sorting sound with semantics}
   spec.description   = %q{systematically sort sound with semantics}
   spec.homepage      = "https://syncopatedstudios.org/soundbot"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.0")
 
   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
@@ -27,11 +27,12 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'tty', '~> 0.10.0'
+
+  spec.add_dependency 'yaml', '~> 0.1.0'
   spec.add_dependency 'rom','~> 5.2.4'
   spec.add_dependency 'rom-sql','~> 3.2.0'
   spec.add_dependency 'sqlite3','~> 1.4.2'
-  
+
   spec.add_development_dependency "pry", "~> 0.13.0"
   spec.add_development_dependency "pry-doc", "~> 1.1.0"
 end
