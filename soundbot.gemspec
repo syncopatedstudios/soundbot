@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'sqlite3','~> 1.4.2'
   spec.add_dependency 'tty-config', '~> 0.4.0'
   spec.add_dependency 'tty-command', '~> 0.10.0'
-  spec.add_dependency 'tty-command', '~> 0.23.0'
+  spec.add_dependency 'tty-prompt', '~> 0.23.0'
   spec.add_development_dependency "pry", "~> 0.13.0"
   spec.add_development_dependency "pry-doc", "~> 1.1.0"
 end

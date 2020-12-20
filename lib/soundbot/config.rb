@@ -1,24 +1,30 @@
 #!/usr/bin/env ruby
 
-require 'tty-config'
-require 'pathname'
+require "tty-config"
+require "tty-prompt"
+require "pathname"
+require 'rom-sql'
+require 'rom-repository'
+require 'sqlite3'
 
-CONFIG = Pathname.new(File.join(ENV['HOME'], '.config', 'soundbot'))
+CONFIGPATH = Pathname.new(File.join(ENV['HOME'], '.config', 'soundbot'))
 
-FileUtils.mkpath(CONFIG.realdirpath) unless CONFIG.realdirpath.exist?
+DB = Pathname.new(File.join(CONFIGPATH, "soundbot.db"))
+DATABASE_CONFIG = ROM::Configuration.new(:sql, "sqlite://#{DB}")
+#MAIN_CONTAINER = ROM.container(DATABASE_CONFIG)
 
-class LoadConfig
-  attr_reader :config
+# create the path to the soundbot config directory unless is already exists
+FileUtils.mkpath(CONFIGPATH.realdirpath) unless CONFIGPATH.realdirpath.exist?
 
-  def initialize
-    @soundbot = TTY::Config.new
-    @soundbot.filename = 'soundbot'
-    @soundbot.extname = '.yaml'
-    @soundbot.append_path CONFIG.realdirpath.to_s
-  end
+module Config
+  module_function
 
-  def self.config
-    @soundbot ||= self.class.new.config
+  def load
+    config = TTY::Config.new
+    config.filename = 'soundbot'
+    config.extname = '.yaml'
+    config.append_path CONFIGPATH.realdirpath.to_s
+    return config
   end
 
 end
