@@ -14,3 +14,4 @@ dotfiles/**
 *.idea
 */*.gem
 Gemfile.lock
+.travis.yml
