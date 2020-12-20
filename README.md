@@ -1,49 +1,44 @@
-# soundbot(s)
+# Soundbot
 
-here they are, or there they are.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/soundbot`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-either way. sound management.
+TODO: Delete this and the text above, and describe your gem
 
-# install
+## Installation
 
-`gem install --user soundbot-1.0.gem`
+Add this line to your application's Gemfile:
 
-If you see something like this;
+```ruby
+gem 'soundbot'
+```
 
-`WARNING:  You don't have /home/b08x/.gem/ruby/2.7.0/bin in your PATH,
-	  gem executables will not run.
-`
-Just give it what it wants.
+And then execute:
 
+    $ bundle install
 
+Or install it yourself as:
 
+    $ gem install soundbot
 
+## Usage
 
+TODO: Write usage instructions here
 
+## Development
 
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
+## Contributing
 
-
-
-
-
-# git stream
-
-https://github.com/mrkmg/git-stream#usage
-
-"Even in small projects, use feature branches. While not "needed",
-it can really help when you have a ton of ideas you are trying to manage."
-
-# rcm config mgmt
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/soundbot. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/soundbot/blob/master/CODE_OF_CONDUCT.md).
 
 
+## Code of Conduct
 
-# ruby stuff
+Everyone interacting in the Soundbot project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/soundbot/blob/master/CODE_OF_CONDUCT.md).
 
-#TODO: add forkoff,childprocess,playlist gems
+## Copyright
 
-# rom stuff
-
-https://github.com/rom-rb/rom/blob/master/bin/console
-https://medium.com/@igkuz/how-to-setup-ruby-object-mapper-rom-for-standalone-project-15472fcf31e1
+Copyright (c) 2020 b08x. See [MIT License](LICENSE.txt) for further details.
