@@ -3,14 +3,12 @@
 require "tty-config"
 require "tty-prompt"
 require "pathname"
-require 'rom-sql'
-require 'rom-repository'
-require 'sqlite3'
+
 
 CONFIGPATH = Pathname.new(File.join(ENV['HOME'], '.config', 'soundbot'))
 
 DB = Pathname.new(File.join(CONFIGPATH, "soundbot.db"))
-DATABASE_CONFIG = ROM::Configuration.new(:sql, "sqlite://#{DB}")
+
 #MAIN_CONTAINER = ROM.container(DATABASE_CONFIG)
 
 # create the path to the soundbot config directory unless is already exists
