@@ -5,8 +5,25 @@ require 'rom-sql'
 require 'rom-repository'
 require 'sqlite3'
 
+DB = Pathname.new(File.join(CONFIGPATH, "soundbot.db"))
+
 DATABASE_CONFIG = ROM::Configuration.new(:sql, "sqlite://#{DB}")
 
+####################
+## Create Tables ###
+####################
+
+gateway = DATABASE_CONFIG.gateways[:default]
+
+gateway.create_table :sounds do
+  primary_key :id
+  column :filename, String
+  column :location, String
+  column :type, String
+  # ...
+end
+
+###-------------
 class Sounds < ROM::Relation[:sql]
  schema(infer: true)
 end

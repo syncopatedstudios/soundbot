@@ -6,32 +6,28 @@ require "soundbot/cli"
 
 module Soundbot
   class Error < StandardError; end
-  # Your code goes here...
-  # check if db file exists, if not initialize database
-  config = Config.load
+end
 
-  #
-  unless config.exist?
-    config.set(:library, value: '')
-    config.set(:editor, value: ENV['EDITOR'])
-    config.write
-  end
+config = Config.load
 
-  settings = config.read
-  prompt = TTY::Prompt.new
+# if the config file doesn't exist, set defaults and write the file
+unless config.exist?
+  config.set(:library, value: '')
+  config.set(:editor, value: ENV['EDITOR'])
+  config.write
+end
 
-  if settings.fetch("library").empty?
+settings = config.read
+prompt = TTY::Prompt.new
 
-    input = prompt.ask("provide directory path to sound library location",
-          convert: :path, required: true, default: "#{ENV['HOME']}/Studio/library")
+if settings.fetch("library").empty?
 
-    library_path = input.sub(/~/, ENV['HOME']).cleanpath.to_s
+  input = prompt.ask("provide directory path to sound library location",
+        convert: :path, required: true, default: "#{ENV['HOME']}/Studio/library")
 
-    config.set(:library, value: "#{library_path}")
+  library_path = input.sub(/~/, ENV['HOME']).cleanpath.to_s
 
-    config.write(force: true)
-  end
+  config.set(:library, value: "#{library_path}")
 
-#  /home/b08x/Workspace/soundbot/lib/soundbot.rb:13:in `<module:Soundbot>':
-# uninitialized constant Soundbot::DB (NameError)
+  config.write(force: true)
 end

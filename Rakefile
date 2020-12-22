@@ -1,7 +1,7 @@
 require "bundler/gem_tasks"
 require "rspec/core/rake_task"
 require "rom/sql/rake_task"
-require 'soundbot'
+require "soundbot"
 
 RSpec::Core::RakeTask.new(:spec)
 
