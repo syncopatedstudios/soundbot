@@ -15,44 +15,45 @@ DATABASE_CONFIG = ROM::Configuration.new(:sql, "sqlite://#{DB}")
 
 gateway = DATABASE_CONFIG.gateways[:default]
 
-gateway.create_table :sounds do
-  primary_key :id
-  column :filename, String
-  column :location, String
-  column :type, String
-  # ...
+unless gateway.schema.include?(:files)
+  gateway.create_table :files do
+    primary_key :id
+    column :filename, String
+    column :location, String
+    column :type, String
+    # ...
+  end
 end
-
 ###-------------
-class Sounds < ROM::Relation[:sql]
- schema(infer: true)
-end
 
-DATABASE_CONFIG.register_relation(Sounds)
+require_relative 'commands/add_file.rb'
+require_relative 'commands/delete_file.rb'
+require_relative 'commands/update_file.rb'
+require_relative 'relations/files.rb'
+require_relative 'repos/filerepo.rb'
 
-class SoundRepo < ROM::Repository[:sounds]
- commands :create, update: :by_pk, delete: :by_pk
-end
+DATABASE_CONFIG.register_relation(Files)
+DATABASE_CONFIG.register_command(AddFile, DeleteFile, UpdateFile)
 
-# a container...
-main_container = ROM.container(DATABASE_CONFIG)
+# the main container...
+MAIN_CONTAINER = ROM.container(DATABASE_CONFIG)
 
 # a repository
-sr = SoundRepo.new(ROM.container(DATABASE_CONFIG))
+#sr = SoundRepo.new(ROM.container(DATABASE_CONFIG))
 
 
 # a class to access the container with or in
 # the repository
 class Library
-  attr_reader :main_container, :sr
+  attr_reader :main_container, :filerepo
 
-  def initialize(main_container, sr)
+  def initialize(main_container, filerepo)
     @main_container = main_container
-    @sr = sr
+    @filerepo = filerepo
   end
 
-  def sounds
-    main_container.relations[:sounds]
+  def files
+    main_container.relations[:files]
   end
 
   # def tasks
