@@ -12,3 +12,5 @@
 .travis.yml
 Gemfile.lock
 .travis.yml
+*.dia
+*.touchosc

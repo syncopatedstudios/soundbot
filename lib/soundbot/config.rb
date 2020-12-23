@@ -1,24 +1,24 @@
 #!/usr/bin/env ruby
 
-require 'tty-config'
-require 'pathname'
+require "tty-config"
+require "tty-prompt"
+require "pathname"
 
-CONFIG = Pathname.new(File.join(ENV['HOME'], '.config', 'soundbot'))
 
-FileUtils.mkpath(CONFIG.realdirpath) unless CONFIG.realdirpath.exist?
+CONFIGPATH = Pathname.new(File.join(ENV['HOME'], '.config', 'soundbot'))
 
-class LoadConfig
-  attr_reader :config
+# create the path to the soundbot config directory unless is already exists
+FileUtils.mkpath(CONFIGPATH.realdirpath) unless CONFIGPATH.realdirpath.exist?
 
-  def initialize
-    @soundbot = TTY::Config.new
-    @soundbot.filename = 'soundbot'
-    @soundbot.extname = '.yaml'
-    @soundbot.append_path CONFIG.realdirpath.to_s
-  end
+module Config
+  module_function
 
-  def self.config
-    @soundbot ||= self.class.new.config
+  def load
+    config = TTY::Config.new
+    config.filename = 'soundbot'
+    config.extname = '.yaml'
+    config.append_path CONFIGPATH.realdirpath.to_s
+    return config
   end
 
 end

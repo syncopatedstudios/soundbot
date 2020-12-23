@@ -1,8 +1,24 @@
 # Soundbot
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/soundbot`. To experiment with that code, run `bin/console` for an interactive prompt.
+Aiming to be a some sort of sound related thing....can't focus.
 
-TODO: Delete this and the text above, and describe your gem
+sorting, stitching, sampling, sequencing...
+
+* browse library of sounds, by various criteria
+  - related complementary frequencies
+  - keys/scales/chords
+  - volume/tempo
+  - duration
+  - intrsument class
+    - percussion
+    - strings
+    - etc
+  - %
+
+* assemble soundfonts/drumkits/sample_packs
+
+% = ideally, using essentia with their fancy models, be able to classify
+sounds based on subjective concepts of mood
 
 ## Installation
 
@@ -19,6 +35,13 @@ And then execute:
 Or install it yourself as:
 
     $ gem install soundbot
+
+
+### Database setup
+
+bundle exec rake db:create_migration[create_sounds]
+
+bundle exec rake db:migrate
 
 ## Usage
 
@@ -41,4 +64,4 @@ Everyone interacting in the Soundbot project's codebases, issue trackers, chat r
 
 ## Copyright
 
-Copyright (c) 2020 b08x. See [MIT License](LICENSE.txt) for further details.
+Copyright (c) 2020 syncopated studios. See [MIT License](LICENSE.txt) for further details.
