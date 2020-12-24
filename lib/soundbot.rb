@@ -3,7 +3,6 @@ require "soundbot/config"
 require "soundbot/database"
 require "soundbot/cli"
 
-
 module Soundbot
   class Error < StandardError; end
 end
