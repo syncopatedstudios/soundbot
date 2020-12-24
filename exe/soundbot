@@ -13,8 +13,10 @@ end
 
 
 begin
-  Soundbot::CLI.start
-rescue Soundbot::CLI::Error => err
+  Soundbot::Config.set_default_config
+  settings = Soundbot::Config.load_config
+  puts "#{settings[:library]}"
+rescue Soundbot::Error => err
   puts "ERROR: #{err.message}"
   exit 1
 end

@@ -1,24 +1,37 @@
 #!/usr/bin/env ruby
 
-require "tty-config"
-require "tty-prompt"
-require "pathname"
+require 'yaml'
+require 'pathname'
+require 'fileutils'
 
+CONFIG = Pathname.new(File.join(ENV['HOME'], '.config', 'soundbot', 'config.yaml'))
 
-CONFIGPATH = Pathname.new(File.join(ENV['HOME'], '.config', 'soundbot'))
+module Soundbot
+  class Error < StandardError; end
 
-# create the path to the soundbot config directory unless is already exists
-FileUtils.mkpath(CONFIGPATH.realdirpath) unless CONFIGPATH.realdirpath.exist?
+  module Config
+    # create the config directory if needed, then copy the default config if needed
+    #
+    # @api private
+    def set_default_config
+      unless CONFIG.exist?
+        lib_dir = File.expand_path(__dir__)
 
-module Config
-  module_function
+        default_config = File.join(lib_dir + '/config.default.yaml')
 
-  def load
-    config = TTY::Config.new
-    config.filename = 'soundbot'
-    config.extname = '.yaml'
-    config.append_path CONFIGPATH.realdirpath.to_s
-    return config
+        FileUtils.mkpath(CONFIG.parent) unless CONFIG.parent.exist?
+
+        FileUtils.cp(default_config, CONFIG)
+      end
+    end
+    module_function :set_default_config
+
+    # open the config file and return the options as hash
+    #
+    # @api private
+    def load_config
+      YAML.load(File.open(CONFIG.to_s))
+    end
+    module_function :load_config
   end
-
 end
