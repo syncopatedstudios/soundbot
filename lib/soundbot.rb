@@ -5,3 +5,5 @@ require "soundbot/database"
 module Soundbot
   class Error < StandardError; end
 end
+
+puts "hey"

@@ -11,10 +11,11 @@ module Config
   def initialize
     @config = File.join($configdir, 'config.yaml')
 
-    default_config = File.join(File.expand_path(__dir__) + '/config.default.yaml')
+    defconfig = File.join(File.expand_path(__dir__) + '/config.default.yaml')
 
     FileUtils.mkpath($configdir) unless Dir.exist?($configdir)
-    FileUtils.cp(default_config, @config)
+
+    FileUtils.cp(defconfig, @config)
 
   end
 
