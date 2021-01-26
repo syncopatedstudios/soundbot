@@ -1,4 +1,4 @@
-# Soundbot
+# Soundbot: deadsampler
 
 Aiming to be a some sort of sound related thing....can't focus.
 
