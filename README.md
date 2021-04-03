@@ -7,6 +7,20 @@
 
 ## Features
 
+- [ ] use ansible to:
+      * add/remove optional gui interface (i3)
+      * add/remove sound applications
+
+
+- [ ] create samplepacks with deadbeef to use with sonic-pi
+*
+
+- [ ]
+
+
+
+---
+
 ## Screencasts
 
 ## Requirements
