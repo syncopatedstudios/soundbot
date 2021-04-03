@@ -1,10 +1,35 @@
+# frozen_string_literal: true
+
+ruby File.read(".ruby-version").strip
+
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in soundbot.gemspec
-gemspec
+gem "refinements", "~> 8.0"
 
-gem "rake", "~> 12.0"
-gem "rspec", "~> 3.0"
+group :code_quality do
+  gem "bundler-audit", "~> 0.7"
+  gem "bundler-leak", "~> 0.2"
+  gem "git-lint", "~> 2.0"
+  gem "reek", "~> 6.0"
+  gem "rubocop", "~> 1.8"
+  gem "rubocop-performance", "~> 1.9"
+  gem "rubocop-rake", "~> 0.5"
+  gem "rubocop-rspec", "~> 2.0"
+  gem "rubycritic", "~> 4.5", require: false
+  gem "simplecov", "~> 0.20"
+end
 
+group :development do
+  gem "rake", "~> 13.0"
+end
 
-gem 'tty', git: "https://github.com/piotrmurach/tty.git"
+group :test do
+  gem "guard-rspec", "~> 4.7", require: false
+  gem "rspec", "~> 3.10"
+end
+
+group :tools do
+  gem "amazing_print", "~> 1.2"
+  gem "pry", "~> 0.13"
+  gem "pry-byebug", "~> 3.9"
+end

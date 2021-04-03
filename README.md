@@ -1,67 +1,64 @@
-# Soundbot: deadsampler
+# Soundbot
 
-Aiming to be a some sort of sound related thing....can't focus.
+[![Alchemists Style Guide](https://img.shields.io/badge/code_style-alchemists-brightgreen.svg)](https://www.alchemists.io/projects/code_quality)
 
-sorting, stitching, sampling, sequencing...
+<!-- Tocer[start]: Auto-generated, don't remove. -->
+<!-- Tocer[finish]: Auto-generated, don't remove. -->
 
-* browse library of sounds, by various criteria
-  - related complementary frequencies
-  - keys/scales/chords
-  - volume/tempo
-  - duration
-  - intrsument class
-    - percussion
-    - strings
-    - etc
-  - %
+## Features
 
-* assemble soundfonts/drumkits/sample_packs
+## Screencasts
 
-% = ideally, using essentia with their fancy models, be able to classify
-sounds based on subjective concepts of mood
+## Requirements
 
-## Installation
+1. [Ruby](https://www.ruby-lang.org)
 
-Add this line to your application's Gemfile:
+## Setup
 
-```ruby
-gem 'soundbot'
-```
+To set up the project, run:
 
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install soundbot
-
-
-### Database setup
-
-bundle exec rake db:create_migration[create_sounds]
-
-bundle exec rake db:migrate
+    bin/setup
 
 ## Usage
 
-TODO: Write usage instructions here
-
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+You can also use the IRB console for direct access to all objects:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+    bin/console
 
-## Contributing
+## Tests
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/soundbot. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/soundbot/blob/master/CODE_OF_CONDUCT.md).
+To test, run:
 
+    bundle exec rake
+
+## Versioning
+
+Read [Semantic Versioning](https://semver.org) for details. Briefly, it means:
+
+- Major (X.y.z) - Incremented for any backwards incompatible public API changes.
+- Minor (x.Y.z) - Incremented for new, backwards compatible, public API enhancements/fixes.
+- Patch (x.y.Z) - Incremented for small, backwards compatible, bug fixes.
 
 ## Code of Conduct
 
-Everyone interacting in the Soundbot project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/soundbot/blob/master/CODE_OF_CONDUCT.md).
+Please note that this project is released with a [CODE OF CONDUCT](CODE_OF_CONDUCT.md). By
+participating in this project you agree to abide by its terms.
 
-## Copyright
+## Contributions
 
-Copyright (c) 2020 syncopated studios. See [MIT License](LICENSE.txt) for further details.
+Read [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+## License
+
+Read [LICENSE](LICENSE.md) for details.
+
+## History
+
+Read [CHANGES](CHANGES.md) for details.
+Built with [Rubysmith](https://www.alchemists.io/projects/rubysmith).
+
+## Credits
+
+Engineered by []().

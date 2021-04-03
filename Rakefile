@@ -1,15 +1,22 @@
-require "bundler/gem_tasks"
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "bundler/audit/task"
+require "bundler/plumber/task"
+require "git/lint/rake/setup"
+require "reek/rake/task"
 require "rspec/core/rake_task"
-require "rom/sql/rake_task"
-require "soundbot"
+require "rubocop/rake_task"
+require "rubycritic/rake_task"
 
-RSpec::Core::RakeTask.new(:spec)
+Bundler::Audit::Task.new
+Bundler::Plumber::Task.new
+Reek::Rake::Task.new
+RSpec::Core::RakeTask.new :spec
+RuboCop::RakeTask.new
+RubyCritic::RakeTask.new
 
-task :default => :spec
+desc "Run code quality checks"
+task code_quality: %i[bundle:audit bundle:leak git_lint reek rubocop rubycritic]
 
-namespace :db do
-  task :setup do
-    config = ROM::Configuration.new(:sql, "sqlite://#{DB}")
-    ROM::SQL::RakeSupport.env = config
-  end
-end
+task default: %i[code_quality spec]
