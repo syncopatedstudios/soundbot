@@ -1,0 +1,11 @@
+---
+
+- include: user.yml
+
+# install ohmyzsh
+- name: install stuff
+  command: "yay -S {{ item }}"
+  with_items:
+    - oh-my-zsh-git
+    - lnav
+    

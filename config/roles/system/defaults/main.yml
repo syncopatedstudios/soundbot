@@ -1,0 +1,18 @@
+# typically wheel or sudo
+admin_group: wheel
+
+user_groups:
+  - name: home
+    gid: 1041
+
+user:
+  name: b08x
+  home: /home/b08x
+  sshdir: /home/b08x/.ssh
+  uid: 1000
+  gid: 1000
+  primary_group: b08x
+  secondary_groups: "wheel,network,input,home,storage,video,users,audio"
+  shell: /bin/zsh
+  email: rwpannick@gmail.com
+  password: $1$ynx7axf8$D/jA4ELwCCtvToD9tcmDq.

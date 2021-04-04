@@ -1,0 +1,39 @@
+---
+
+- name: create user group(s)
+  group: name={{ item.name }} state=present gid={{ item.gid }}
+  with_items: "{{ user_groups }}"
+
+- name: add this user to desired groups
+  user: >
+    name="{{ user.name }}"
+    uid="{{ user.uid }}"
+    groups="{{ user.secondary_groups }}"
+    shell="{{ user.shell }}"
+    append=yes
+    state=present
+  ignore_errors: true
+
+- name: check if file and/or directory exists
+  stat: "path=/etc/sudoers.d/10-unix_admin"
+  register: hazifile
+  tags: ['sudoers']
+
+- name: add user to sudoers
+  lineinfile:
+    path: /etc/sudoers.d/10-user_admin
+    line: '"{{ user.name }}" ALL=(ALL) NOPASSWD: ALL'
+    create: yes
+    validate: 'visudo -cf %s'
+  when: not hazifile.stat.exists
+  tags: ['sudoers']
+
+- name: like sudoers for polkit
+  template: >
+    src=49-nopasswd_global.rules.j2
+    dest=/etc/polkit-1/rules.d/49-nopasswd_global.rules
+    owner=0
+    group=0
+    mode=0644
+    backup=no
+  tags: ['polkit','sudoers']

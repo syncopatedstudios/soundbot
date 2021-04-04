@@ -1,0 +1,21 @@
+---
+
+- name: setup
+  gather_facts: yes
+  hosts: all
+
+  tasks:
+    - name: Print all available facts
+      debug:
+        var: ansible_facts
+      tags: ['facts']
+
+    - name: reboot to enable uinput perms
+      command: shutdown -r now
+      when: reboot is defined
+
+
+  roles:
+     - { role: system, tags: ['system'] }
+     - { role: soundbot, tags: ['soundbot'] }
+     - { role: ui, tags: ['ui'] }
